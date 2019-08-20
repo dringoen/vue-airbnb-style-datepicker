@@ -236,6 +236,7 @@ export default {
     startOpen: { type: Boolean },
     fullscreenMobile: { type: Boolean },
     inline: { type: Boolean },
+    sundayFirst: { type: Boolean, default: false },
     mobileHeader: { type: String },
     disabledDates: { type: Array, default: () => [] },
     enabledDates: { type: Array, default: () => [] },
@@ -268,7 +269,6 @@ export default {
         disabled: '#fff',
         hoveredInRange: '#67f6ee',
       },
-      sundayFirst: false,
       ariaLabels: {
         chooseDate: date => date,
         chooseStartDate: date => `Choose ${date} as your start date.`,
