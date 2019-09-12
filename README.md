@@ -27,3 +27,10 @@ I gladly accept contributions to improve this datepicker. **But before you start
 
 ## Roadmap/todo:s
 - Improve logic for positioning of datepicker. Support for showing the datepicker above the input if it doesn't fit below.
+
+
+## Local Install Tip
+* Vue Datepicker linking for local development
+43	```
+44	cd ~/Sites/<using-project>; npm link ../../vue-airbnb-style-datepicker/
+45	````

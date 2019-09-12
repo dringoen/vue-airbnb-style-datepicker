@@ -27,7 +27,7 @@
             <svg v-else viewBox="0 0 1000 1000">
               <path
                 d="M336.2 274.5l-210.1 210h805.4c13 0 23 10 23 23s-10 23-23 23H126.1l210.1 210.1c11 11 11 21 0 32-5 5-10 7-16 7s-11-2-16-7l-249.1-249c-11-11-11-21 0-32l249.1-249.1c21-21.1 53 10.9 32 32z"
-              ></path>
+              />
             </svg>
           </button>
         </div>
@@ -37,7 +37,7 @@
             <svg v-else viewBox="0 0 1000 1000">
               <path
                 d="M694.4 242.4l249.1 249.1c11 11 11 21 0 32L694.4 772.7c-5 5-10 7-16 7s-11-2-16-7c-11-11-11-21 0-32l210.1-210.1H67.1c-13 0-23-10-23-23s10-23 23-23h805.4L662.4 274.5c-21-21.1 11-53.1 32-32.1z"
-              ></path>
+              />
             </svg>
           </button>
         </div>
@@ -238,6 +238,7 @@ export default {
     inline: { type: Boolean },
     sundayFirst: { type: Boolean, default: false },
     mobileHeader: { type: String },
+    disallowSpanningDisabledDates: { type: Boolean, default: false },
     disabledDates: { type: Array, default: () => [] },
     enabledDates: { type: Array, default: () => [] },
     customizedDates: { type: Array, default: () => [] },
@@ -261,13 +262,13 @@ export default {
       showKeyboardShortcutsMenu: false,
       showMonths: 2,
       colors: {
-        selected: '#00a699',
-        inRange: '#66e2da',
+        selected: '#2a8cb7',
+        inRange: '#88c8e3',
         selectedText: '#fff',
         text: '#565a5c',
-        inRangeBorder: '#33dacd',
+        inRangeBorder: '#6cb8d9',
         disabled: '#fff',
-        hoveredInRange: '#67f6ee',
+        hoveredInRange: '#98d9f5',
       },
       ariaLabels: {
         chooseDate: date => date,
@@ -488,7 +489,6 @@ export default {
   },
   created() {
     this.setupDatepicker()
-
     if (this.sundayFirst) {
       this.setSundayToFirstDayInWeek()
     }
@@ -518,7 +518,7 @@ export default {
     this.generateMonths()
     this.generateYears()
 
-    if (this.startOpen || this.inline) {
+    if (this.startOpen) {
       this.openDatepicker()
     }
 
@@ -1038,9 +1038,9 @@ export default {
       }
     },
     closeDatepicker() {
-      if (this.inline) {
-        return
-      }
+      // if (this.inline) {
+      //   return
+      // }
       this.showDatepicker = false
       this.showKeyboardShortcutsMenu = false
       this.triggerElement.classList.remove('datepicker-open')
