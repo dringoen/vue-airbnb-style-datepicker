@@ -165,6 +165,9 @@
               >{{ shortcut.symbol }}</span>
               {{ shortcut.label }}
             </li>
+            <li>
+              <br/><small><i>&mdash; {{ version }} &mdash;</i></small>
+            </li>
           </ul>
         </div>
       </div>
@@ -255,6 +258,7 @@ export default {
   },
   data() {
     return {
+      version: 'v1.0.1, 2020-01-09',
       wrapperId: 'airbnb-style-datepicker-wrapper-' + randomString(5),
       dateFormat: 'YYYY-MM-DD',
       dateLabelFormat: 'dddd, MMMM D, YYYY',
@@ -1038,9 +1042,9 @@ export default {
       }
     },
     closeDatepicker() {
-      // if (this.inline) {
-      //   return
-      // }
+      if (this.inline) {
+        return
+      }
       this.showDatepicker = false
       this.showKeyboardShortcutsMenu = false
       this.triggerElement.classList.remove('datepicker-open')
