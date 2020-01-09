@@ -258,7 +258,7 @@ export default {
   },
   data() {
     return {
-      version: 'v1.0.1, 2020-01-09',
+      version: 'v1.0.2, 2020-01-09',
       wrapperId: 'airbnb-style-datepicker-wrapper-' + randomString(5),
       dateFormat: 'YYYY-MM-DD',
       dateLabelFormat: 'dddd, MMMM D, YYYY',
